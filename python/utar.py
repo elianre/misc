@@ -36,6 +36,8 @@ def uncompress(path):
         cwd = os.getcwd()
         os.chdir(dir_path)
         ret = os.system("%s %s" % (file_map[file_type], os.path.basename(path)))
+        if not ret == 0:
+            print "ERROR: exit code %n" % ret
         os.chdir(cwd)
     else:
         print "ERROR: '%s' is not a valid path" % path
