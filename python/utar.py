@@ -32,6 +32,8 @@ def uncompress(path):
             sys.exit(1)
 
         dir_path = os.path.dirname(path)
+        if dir_path == "":
+            dir_path = "."
         print "Uncompress '%s' at '%s'..." % (path, dir_path)
         cwd = os.getcwd()
         os.chdir(dir_path)
